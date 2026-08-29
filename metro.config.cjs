@@ -12,4 +12,9 @@ config.resolver.sourceExts.push("svg");
 // Use our 3rd party transformer for handling SVG files
 config.transformer.babelTransformerPath = require.resolve("react-native-svg-transformer");
 
+// Add @ alias support
+config.resolver.alias = {
+    '@': __dirname,
+};
+
 module.exports = config;
