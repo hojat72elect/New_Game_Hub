@@ -9,6 +9,8 @@ import {isAvailableAsync, shareAsync} from 'expo-sharing';
 import {downloadAsync,} from 'expo-file-system/legacy';
 import {Paths} from 'expo-file-system';
 import {createAssetAsync, requestPermissionsAsync} from 'expo-media-library';
+import ShareIcon from "@/assets/svg/share.svg";
+import DownloadIcon from "@/assets/svg/download.svg";
 
 export function ImageViewerScreen() {
 
@@ -111,11 +113,11 @@ export function ImageViewerScreen() {
                         {currentIndex + 1} / {screenshots.length}
                     </Text>
                     <View style={{flexDirection: 'row', gap: 16}}>
-                        <TouchableOpacity onPress={handleShare}>
-                            <Text style={{fontSize: 24, color: '#FFF'}}>↗</Text>
+                        <TouchableOpacity style={{padding: 5}} onPress={handleShare}>
+                            <ShareIcon width={30} height={30}/>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={handleDownload}>
-                            <Text style={{fontSize: 24, color: '#FFF'}}>↓</Text>
+                        <TouchableOpacity style={{padding:5}} onPress={handleDownload}>
+                           <DownloadIcon width={30} height={30}/>
                         </TouchableOpacity>
                     </View>
                 </View>
